@@ -137,7 +137,7 @@ class Block(nn.Module):
         return x
 
 # super simple bigram model
-class BigramLanguageModel(nn.Module):
+class GPT(nn.Module):
 
     def __init__(self):
         super().__init__()
@@ -192,7 +192,7 @@ class BigramLanguageModel(nn.Module):
             idx = torch.cat((idx,idx_next), dim=1) # (Batch, Time+1)
         return idx
     
-model = BigramLanguageModel()
+model = GPT()
 m = model.to(device)
 
 # create a PyTorch optimizer
